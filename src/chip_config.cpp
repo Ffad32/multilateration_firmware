@@ -17,10 +17,10 @@
 // ---------------------------------------------------------------------------
 static const chip_config_entry_t chip_table[] = {
     // chip_id              role      number
-    { 0xF8B3B74973D4, ROLE_TX, 1 },  // <-- replace with real chip IDs
+    { 0xF8B3B747E064, ROLE_TX, 1 },  // tag 1 0xF8B3B74973D4
     { 0xF8B3B7495D18, ROLE_RX, 1 },  // anchor 1
     { 0xF8B3B74862EC, ROLE_RX, 2 },  // anchor 2
-    { 0xF8B3B747E064, ROLE_RX, 3 },  // anchor 3
+    { 0xF8B3B74973D4, ROLE_RX, 3 },  // anchor 3
 };
 
 static constexpr size_t CHIP_TABLE_LEN =

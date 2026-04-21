@@ -31,7 +31,19 @@ void setup_tx() {
     spiSelect(PIN_SS);
 
     /* Wait for DW3000 to start up (INIT_RC → IDLE_RC transition). */
-    delay(200);
+    delay(500);
+     dwt_softreset();
+    //delay(300); /* Wait for chip to stabilize after soft reset. */
+
+    delay(300);
+        bool idle_check_passed = false;
+    for (int retries = 0; retries < 10; retries++) {
+        if (dwt_checkidlerc()) {
+            idle_check_passed = true;
+            break;
+        }
+        delay(100);
+    }
 
     /* Verify DW IC is in IDLE_RC before proceeding. */
     if (!dwt_checkidlerc()) {
@@ -39,9 +51,7 @@ void setup_tx() {
         while (1) ;
     }
 
-    dwt_softreset();
-    delay(200); /* Wait for chip to stabilize after soft reset. */
-
+   
     if (dwt_initialise(DWT_DW_INIT) == DWT_ERROR) {
         UART_puts("INIT FAILED\r\n");
         while (1) ;

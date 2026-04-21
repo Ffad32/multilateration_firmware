@@ -13,7 +13,7 @@
 // Edit SERVER_HOST and SERVER_PORT to point at your REST server.
 // The ESP32 will POST JSON to:  http://<SERVER_HOST>:<SERVER_PORT><SERVER_PATH>
 // ---------------------------------------------------------------------------
-#define SERVER_HOST "192.168.1.197"     /* IP or hostname of the REST server */
+#define SERVER_HOST "192.168.1.80"     /* IP or hostname of the REST server */
 #define SERVER_PORT 8080                  /* TCP port the server listens on     */
 #define SERVER_PATH "/api/status"       /* URL path for the POST endpoint     */
 
