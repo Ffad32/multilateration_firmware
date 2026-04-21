@@ -5,4 +5,4 @@
 #define BAT_CRITICAL_VOLTAGE 3.3f
 
 float battery_read_voltage();
-void  battery_print_status();
+//void  battery_print_status();
